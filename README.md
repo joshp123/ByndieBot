@@ -6,3 +6,5 @@ Feature request
 -Beertimer countdown time on command
 
 -RP integration
+
+-http://yesno.wtf/#api
