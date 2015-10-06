@@ -7,4 +7,4 @@ Feature request
 
 -RP integration
 
--http://yesno.wtf/#api
+-yesno.wtf/#api
