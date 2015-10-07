@@ -8,3 +8,5 @@ Feature request
 -RP integration
 
 -yesno.wtf/#api
+
+-twss ( if any(kw in msg for key in ['large', 'small', 'suck', 'holes']): return 'twss' )
