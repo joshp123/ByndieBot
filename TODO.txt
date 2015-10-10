@@ -1,0 +1,2 @@
+pip install dnspython3
+pip3 install HTMLParser
