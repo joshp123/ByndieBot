@@ -9,6 +9,9 @@ shelf.db
 .DS_Store
 *.AppleDouble*
 
+# Vim:
+*.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
