@@ -1,3 +1,14 @@
+# Some crap from will:
+pip-log.txt
+shelf.db
+
+# Don't commit credentials again lol.
+*credentials*
+
+# Don't let apple files shit up the repo:
+.DS_Store
+*.AppleDouble*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
