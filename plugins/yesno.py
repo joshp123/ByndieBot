@@ -1,5 +1,14 @@
 import requests
 import json
-r = requests.get("http://yesno.wtf/api")
-parsed_json = json.loads(r.content)
-print(parsed_json['image'])
+
+from will.plugin import WillPlugin
+from will.decorators import respond_to
+
+class YesNoPlugin(WillPlugin):
+    @respond_to("yesno")
+    def get_chuck(self, message):
+        """
+        yesno: I will bring you an answer
+        """
+        self.reply(message,
+                   json.loads(requests.get("http://yesno.wtf/api").content)['image'])
