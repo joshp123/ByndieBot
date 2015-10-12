@@ -111,6 +111,12 @@ PLUGIN_BLACKLIST = [
 #     "admins": ["steven", "will"]
 # }
 
+ACL = {
+    'sqs' : ['JoshPalmer', 'MichielRanshuysen']
+    # todo store in a config because ~security~
+}
+
+
 # Deprecated - use ACL, above, instead:  User handles who are allowed to perform
 # `admin_only` plugins.  Defaults to everyone.
 # ADMINS = [
