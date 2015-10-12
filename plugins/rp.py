@@ -11,6 +11,6 @@ class RadioParadisePlugin(WillPlugin):
         soup = bs(html, 'html.parser')
         now_playing = soup.find_all(id='nowplaying_title')[0].text
         img = soup.find_all('img')[0]['src'].encode('utf-8')
-        self.reply(message, "Bill is playing: {}\n\n{}".format(now_playing, img))
+        self.reply(message, "(bill) is playing: {}\n\n{}".format(now_playing, img))
         return now_playing
 
