@@ -1,6 +1,7 @@
 # Some crap from will:
 pip-log.txt
 shelf.db
+config.py # no secrets in git
 
 # Don't commit credentials again lol.
 *credentials*
