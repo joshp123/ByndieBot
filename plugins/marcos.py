@@ -1,5 +1,5 @@
 from will.plugin import WillPlugin
-from will.decorators import respond_to
+from will.decorators import respond_to, hear
 
 
 class MarcosPlugin(WillPlugin):
