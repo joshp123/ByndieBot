@@ -74,8 +74,7 @@ def get_beer_slogan():
     if weekday > 4:
         return "{}".format(weekendlogans[randint(0, len(weekendlogans) - 1)])
     elif now < todayendbeeroclock and now >= todaybeeroclock:
-        return "{}just wait another {} hours {} minutes and {} seconds".format(
-            beertimeslogans[randint(0, len(beertimeslogans) - 1)], h, m, s)
+        return beertimeslogans[randint(0, len(beertimeslogans) - 1)]
     else:
         return "{}just wait another {} hours {} minutes and {} seconds".format(
             tooearlyslogans[randint(0, len(tooearlyslogans) - 1)], h, m, s)
