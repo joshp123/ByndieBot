@@ -2,9 +2,9 @@ from will.plugin import WillPlugin
 from will.decorators import respond_to
 
 
-class ChuckPlugin(WillPlugin):
+class MarcosPlugin(WillPlugin):
     @respond_to("marcos")
-    def get_chuck(self, message):
+    def get_marcos(self, message):
         """
         marcos: Pan means bread
         """
