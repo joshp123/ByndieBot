@@ -1,5 +1,4 @@
 import requests
-import json
 
 from will.plugin import WillPlugin
 from will.decorators import respond_to
@@ -11,5 +10,5 @@ class ChuckPlugin(WillPlugin):
         """
         chuck: I bring you wisdom.
         """
-        self.reply(message,
-                   json.loads(requests.get("http://api.icndb.com/jokes/random").content)['value']['joke'])
+        random_joke = requests.get("http://api.icndb.com/jokes/random").json()
+        self.reply(message, random_joke['value']['joke'])
