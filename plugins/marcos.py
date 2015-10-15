@@ -1,9 +1,8 @@
 from will.plugin import WillPlugin
-from will.decorators import respond_to, hear
+from will.decorators import respond_to
 
 
 class MarcosPlugin(WillPlugin):
-    @hear(" pan ")
     @respond_to("marcos")
     def get_marcos(self, message):
         """
