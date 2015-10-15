@@ -54,6 +54,7 @@ def get_beer_slogan():
         "BEER will save the world! I don't know how, but it will",
         "BEER! I only drink to make YOU more interesting",
         "My idea of a balanced diet is a BEER in each hand",
+        "Jesse will come soon, he WILL be the HERO of your day",
         "A beer a day keeps the doctor away. Have one!",
         "Shhh...Yep, I hear a BEER calling me",
         "Friends bring happiness into your life, best friends bring BEER!",
