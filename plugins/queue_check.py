@@ -4,7 +4,7 @@ from will.decorators import respond_to
 
 
 class SQSChecker(WillPlugin):
-    @respond_to("SQS (?P<queue_name>.*) (?P<region>.*)")
+    @respond_to("SQS (?P<queue_name>.*) (?P<region>.*)", case_sensitive=False)
     # @respond_to("SQS (?P<queue_name>.*)$")
     # @respond_to("How many messages are there in (?P<queue_name>.*)+"
     #            " region (?P<region>.*)", acl=['sqs'])
@@ -19,8 +19,11 @@ class SQSChecker(WillPlugin):
             c = connect_to_region(region)
             messages_in_queue = c.get_queue_attributes(
                 c.get_queue(queue_name))['ApproximateNumberOfMessages']
+            messages_in_flight = c.get_queue_attributes(
+                c.get_queue(queue_name))['ApproximateNumberOfMessagesNotVisible']
             self.reply(message,
-                       "There are ~{} messages in the {} queue in {}"
-                       .format(messages_in_queue, queue_name, region))
+                       "There are ~{} messages ({} in flight) in the {} queue in {}"
+                       .format(messages_in_queue, messages_in_flight,
+                               queue_name, region))
         except:
             self.reply(message, "That's not a real region or queue. (idiot) (idiot) (idiot)") 
