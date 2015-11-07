@@ -47,7 +47,19 @@ def get_beer_slogan():
         "It's BEER time! Go on, you know you want one...",
         "I got 99 problems & BEERTIME solves all of 'em",
         "Trust me, you can dance...BEERTIME!",
-        "Hello? Is it BEER you're looking for?",
+        "Take one, it won’t slow you down!",
+        "A hard earned thirst needs a big cold beer",
+        "Have a BEER, It's the most natural thing in the world",
+        "Remember! Beer as food-value, but food does not have beer-value",
+        "BEER will save the world! I don't know how, but it will",
+        "BEER! I only drink to make YOU more interesting",
+        "Hey, looks like its BEERTIME, better grab me a cold one",
+        "Drink good BEER, with GOOD friends",
+        "The party is not over till the beer is in the belly",
+        "All your BEER are belong to us",
+        "I need to do something about my Guzzelitis",
+        "My idea of a balanced diet is a BEER in each hand",
+        "Jesse will come soon, he WILL be the HERO of your day",
         "A beer a day keeps the doctor away. Have one!",
         "Shhh...Yep, I hear a BEER calling me",
         "Friends bring happiness into your life, best friends bring BEER!",
@@ -72,9 +84,9 @@ def get_beer_slogan():
     m, s = divmod(s, 60)
 
     if weekday > 4:
-        return "{}".format(weekendlogans[randint(0, len(weekendlogans) - 1)])
+        return "(jesse) {}".format(weekendlogans[randint(0, len(weekendlogans) - 1)])
     elif now < todayendbeeroclock and now >= todaybeeroclock:
-        return beertimeslogans[randint(0, len(beertimeslogans) - 1)]
+        return "(jesse) {}".format(beertimeslogans[randint(0, len(beertimeslogans) - 1)])
     else:
-        return "{}just wait another {} hours {} minutes and {} seconds".format(
+        return "(jesse) {}just wait another {} hours {} minutes and {} seconds".format(
             tooearlyslogans[randint(0, len(tooearlyslogans) - 1)], h, m, s)
