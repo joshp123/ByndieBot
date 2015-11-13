@@ -9,4 +9,4 @@ class MarcosPlugin(WillPlugin):
         """
         marcos: Pan means bread
         """
-        self.reply(message, "Pan means bread")
+        self.reply(message, "(author) Pan means bread")
