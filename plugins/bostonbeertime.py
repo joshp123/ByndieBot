@@ -5,16 +5,16 @@ from random import randint
 from will.plugin import WillPlugin
 from will.decorators import respond_to
 
-class BeerTimePlugin(WillPlugin):
+class BostonBeerTimePlugin(WillPlugin):
     @respond_to("bostonbeer")
-    def reply_to_beertime(self, message):
+    def reply_to_bostonbeertime(self, message):
         """
         bostonbeer: I tell you how long it is until Boston has their beers.
         """
-        self.reply(message, get_beer_slogan())
+        self.reply(message, get_bostonbeer_slogan())
 
 
-def get_beer_slogan():
+def get_bostonbeer_slogan():
     now = datetime.datetime.now()
     now = = now.replace(hour=-6)
     today = datetime.date.today()
