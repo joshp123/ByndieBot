@@ -2,9 +2,10 @@ import datetime
 from random import randint
 
 from will.plugin import WillPlugin
-from will.decorators import respond_to
+from will.decorators import respond_to, hear
 
 class BeerTimePlugin(WillPlugin):
+    @hear("( beer |^beer$| beertime | ^beertime$)")
     @respond_to("beertime")
     def reply_to_beertime(self, message):
         """
@@ -47,7 +48,6 @@ def get_beer_slogan():
         "It's BEER time! Go on, you know you want one...",
         "I got 99 problems & BEERTIME solves all of 'em",
         "Trust me, you can dance...BEERTIME!",
-        "Take one, it won’t slow you down!",
         "A hard earned thirst needs a big cold beer",
         "Have a BEER, It's the most natural thing in the world",
         "Remember! Beer as food-value, but food does not have beer-value",
