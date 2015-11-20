@@ -1,13 +1,13 @@
 import requests
 
 from will.plugin import WillPlugin
-from will.decorators import hear
+from will.decorators import respond_to
 
-class BrucePlugin(WillPlugin):
-    @hear("bruce")
-    def get_bruce(self, message):
+class CryptoPlugin(WillPlugin):
+    @respond_to("crypto")
+    def get_crypto(self, message):
         """
-        bruce: Bruce Schneier
+        crypto: Bruce Schneier facts
         """
         self.reply(message,
                    requests.get("http://www.looq.nl/bruce/index.php").content)
