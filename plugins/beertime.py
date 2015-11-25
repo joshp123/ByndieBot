@@ -5,7 +5,7 @@ from will.plugin import WillPlugin
 from will.decorators import respond_to, hear
 
 class BeerTimePlugin(WillPlugin):
-    @hear("( beer |^beer$| beertime | ^beertime$)")
+    @hear("(^|[^a-zA-Z])beer(time)?($|[^a-zA-Z])")
     @respond_to("beertime")
     def reply_to_beertime(self, message):
         """
