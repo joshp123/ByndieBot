@@ -3,7 +3,7 @@ from will.decorators import respond_to, hear
 
 
 class MarcosPlugin(WillPlugin):
-    @hear("( pan |^pan$)")
+    @hear("(^|\s)pan($|\s)")
     @respond_to("marcos")
     def get_marcos(self, message):
         """
