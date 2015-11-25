@@ -63,7 +63,13 @@ def get_beer_slogan():
         "A beer a day keeps the doctor away. Have one!",
         "Shhh...Yep, I hear a BEER calling me",
         "Friends bring happiness into your life, best friends bring BEER!",
-        "It makes you see double...and feel single. Have one!"
+        "It makes you see double...and feel single. Have one!",
+        "Beauty lies in the hands of the BEERHOLDER",
+        "Wish you were BEER",
+        "Life is brewtiful",
+        "Unlike BEER, love doesn't taste good when it's cold",
+        "BEER doesn't ask silly questions, BEER understands",
+        "Everything I needed in life, i learned from BEER"
     ]
 
     tooearlyslogans = [
@@ -74,7 +80,13 @@ def get_beer_slogan():
         "Come on man...",
         "Less drinking, more thinking...",
         "Alcohol is a parent to domestic violence...",
-        "Drink water...refresh, rehydrate, replenish..."
+        "Drink water...refresh, rehydrate, replenish...",
+        "Alcohol is not the answer right now...",
+        "You are not working right now...go back to work...",
+        "You need much less BEER than you think you need right now...0 to be honest...",
+        "Don't rush anything...when the time is right it'll happen",
+        "Stay focused, excited and passionate about what you do...",
+        "There will be a time when everything will fall into place..."
     ]
 
     weekendlogans = ["FFS... it's the WEEKEND, go home and relax!"]
