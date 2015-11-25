@@ -17,13 +17,18 @@ class SQSChecker(WillPlugin):
         """
         try:
             c = connect_to_region(region)
-            messages_in_queue = c.get_queue_attributes(
-                c.get_queue(queue_name))['ApproximateNumberOfMessages']
-            messages_in_flight = c.get_queue_attributes(
-                c.get_queue(queue_name))['ApproximateNumberOfMessagesNotVisible']
-            self.reply(message,
-                       "There are ~{} messages ({} in flight) in the {} queue in {}"
-                       .format(messages_in_queue, messages_in_flight,
-                               queue_name, region))
         except:
-            self.reply(message, "That's not a real region or queue. (idiot) (idiot) (idiot)") 
+            self.reply(message, '"{}" is not a real region. (idiot) (idiot) (idiot)'.format(region)) 
+        else:
+            try:
+                messages_in_queue = c.get_queue_attributes(
+                    c.get_queue(queue_name))['ApproximateNumberOfMessages']
+                messages_in_flight = c.get_queue_attributes(
+                    c.get_queue(queue_name))['ApproximateNumberOfMessagesNotVisible']
+            except:
+                self.reply(message, '"{}" is not a real queue. (idiot) (idiot) (idiot)'.format(queue_name)) 
+            else:
+                self.reply(message,
+                           "There are ~{} messages ({} in flight) in the {} queue in {}"
+                           .format(messages_in_queue, messages_in_flight,
+                                   queue_name, region))
