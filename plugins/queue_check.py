@@ -9,12 +9,20 @@ class SQSChecker(WillPlugin):
     # @respond_to("How many messages are there in (?P<queue_name>.*)+"
     #            " region (?P<region>.*)", acl=['sqs'])
     def get_messages_in_sqs_queue(self, message,
-                                  queue_name='image-regenerate-requests',
-                                  region='eu-west-1'):
+                                  queue_name=None,
+                                  region=None):
         """
         SQSBot: I can tell you how many messages are in our SQS queues.
                 Usage: "@ByndieBot How many messages are there in <queue> in <region>
         """
+        
+        # handle default values
+        if not queue_name:
+            queue_name = 'image-regenerate-requests'
+        
+        if not region:
+            region = 'eu-west-1'
+        
         try:
             c = connect_to_region(region)
         except:
