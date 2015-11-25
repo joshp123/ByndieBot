@@ -66,7 +66,13 @@ def get_bostonbeer_slogan():
         "A beer a day keeps the doctor away. Have one!",
         "Shhh...Yep, I hear a BEER calling me",
         "Friends bring happiness into your life, best friends bring BEER!",
-        "It makes you see double...and feel single. Have one!"
+        "It makes you see double...and feel single. Have one!",
+        "Beauty lies in the hands of the BEERHOLDER",
+        "Wish you were BEER",
+        "Life is brewtiful",
+        "Unlike BEER, love doesn't taste good when it's cold",
+        "BEER doesn't ask silly questions, BEER understands",
+        "Everything I needed in life, i learned from BEER"
     ]
 
     tooearlyslogans = [
@@ -77,7 +83,13 @@ def get_bostonbeer_slogan():
         "Come on man...",
         "Less drinking, more thinking...",
         "Alcohol is a parent to domestic violence...",
-        "Drink water...refresh, rehydrate, replenish..."
+        "Drink water...refresh, rehydrate, replenish...",
+        "Alcohol is not the answer right now...",
+        "You are not working right now...go back to work...",
+        "You need much less BEER than you think you need right now...0 to be honest...",
+        "Don't rush anything...when the time is right it'll happen",
+        "Stay focused, excited and passionate about what you do...",
+        "There will be a time when everything will fall into place..."
     ]
 
     weekendlogans = ["FFS... it's the WEEKEND, go home and relax!"]
@@ -87,9 +99,9 @@ def get_bostonbeer_slogan():
     m, s = divmod(s, 60)
 
     if weekday > 4:
-        return "(borat) {}".format(weekendlogans[randint(0, len(weekendlogans) - 1)])
+        return "(boston) {}".format(weekendlogans[randint(0, len(weekendlogans) - 1)])
     elif now < todayendbeeroclock and now >= todaybeeroclock:
-        return "(borat) {}".format(beertimeslogans[randint(0, len(beertimeslogans) - 1)])
+        return "(boston) {}".format(beertimeslogans[randint(0, len(beertimeslogans) - 1)])
     else:
-        return "(borat) {}just wait another {} hours {} minutes and {} seconds".format(
+        return "(boston) {}just wait another {} hours {} minutes and {} seconds".format(
             tooearlyslogans[randint(0, len(tooearlyslogans) - 1)], h, m, s)
