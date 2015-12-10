@@ -1,13 +1,12 @@
 
 import requests
-import json
 
 from will.plugin import WillPlugin
 from will.decorators import respond_to
 
-class ChuckPlugin(WillPlugin):
+class PsychPlugin(WillPlugin):
     @respond_to("psychgif")
-    def get_skeet(self, message):
+    def get_psycht(self, message):
         """
         psychgif: I psych you out...
         """
