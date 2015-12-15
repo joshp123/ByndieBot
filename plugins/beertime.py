@@ -86,8 +86,16 @@ def get_beer_slogan():
         h, s = divmod(s, 3600)
         m, s = divmod(s, 60)
 
-        hours = '{} hours '.format(h) if h > 0 else ''
-        minutes = '{} minutes and '.format(m) if m > 0 else ''
+        if h > 0:
+            hours = '{} hours, '.format(h)
+        else:
+            hours = ''
+
+        if m > 0:
+            minutes = '{} minutes and '.format(m)
+        elif h == 0:
+            minutes = ''
+
         seconds = '{} seconds'.format(s)
 
         return "(jesse) {} Just wait another {}{}{}".format(
