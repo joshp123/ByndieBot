@@ -50,7 +50,7 @@ def get_beer_slogan():
         "Trust me, you can dance...BEERTIME!",
         "A hard earned thirst needs a big cold beer",
         "Have a BEER, It's the most natural thing in the world",
-        "Remember! Beer as food-value, but food does not have beer-value",
+        "Remember! Beer has food-value, but food does not have beer-value",
         "BEER will save the world! I don't know how, but it will",
         "BEER! I only drink to make YOU more interesting",
         "Hey, looks like its BEERTIME, better grab me a cold one",
