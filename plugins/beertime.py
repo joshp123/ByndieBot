@@ -91,9 +91,9 @@ def get_beer_slogan():
         else:
             hours = ''
 
-        if m > 0:
+        if m > 0 or h > 0:
             minutes = '{} minutes and '.format(m)
-        elif h == 0:
+        else:
             minutes = ''
 
         seconds = '{} seconds'.format(s)
