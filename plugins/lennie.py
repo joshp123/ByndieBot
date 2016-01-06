@@ -1,13 +1,13 @@
 import requests
 
 from will.plugin import WillPlugin
-from will.decorators import hear
+from will.decorators import respond_to
 
 class LenniePlugin(WillPlugin):
-    @hear("lennie")
+    @respond_to("what does lennie think?")
     def get_borat(self, message):
         """
-        lennie: Random!
+        what does lennie think?: Random!
         """
         self.reply(message,
                    requests.get("http://www.looq.nl/lenniebot/index.php").content)
