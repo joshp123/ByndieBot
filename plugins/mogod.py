@@ -4,7 +4,7 @@ from will.plugin import WillPlugin
 from will.decorators import respond_to, hear
 
 class MoGodPlugin(WillPlugin):
-    @hear("(mo|god){1,2}")
+    @hear("^(.*)[\s]*(\bmo\b|\bgod\b|\bmogod\b)[\s]*(.*)$")
     @respond_to("mogod")
     def reply_to_mogod(self, message):
         """
