@@ -10,12 +10,12 @@ class MartijnQODPlugin(WillPlugin):
 
     @hear('\\W+')
     def store_message(self, message):
+        if message.sender.name != 'Martijn Meijer':
+            return
         sentence = str(message)
         words = sentence.split(' ')
         max_word_len = max([len(w) for w in words])
-        if message.sender.name == 'Martijn Meijer' and\
-                len(sentence) > 20 and\
-                max_word_len > 5:
+        if len(sentence) > 20 and max_word_len > 5:
             self.messages.append(sentence)
 
     @periodic(hour='16', minute='0', day_of_week='mon-fri')
