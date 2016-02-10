@@ -7,7 +7,7 @@ class KennyPlugin(WillPlugin):
     @respond_to("what does kenny think?")
     def get_kenny(self, message):
         """
-        what does kenny powers think?: Random!
+        what does kenny think?
         """
         self.reply(message,
                    requests.get("http://www.looq.nl/kennybot/index.php").content)
