@@ -20,7 +20,10 @@ class MartijnQODPlugin(WillPlugin):
 
     @periodic(hour='16', minute='0', day_of_week='mon-fri')
     def say_quote(self):
-        q = choice(self.messages)
         self.say('Martijn Quote of the Day!')
-        self.say('/quote {}'.format(q))
+        if not self.messages:
+            self.say('Martijn did not say anything worth mentioning today :(')
+        else:
+            q = choice(self.messages)
+            self.say('/quote {}'.format(q))
         self.messages = []  # empty list to prepare for next day
