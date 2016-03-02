@@ -34,6 +34,14 @@ class BeerTimePlugin(WillPlugin):
         tz = pytz.timezone('Europe/London')
         self.reply(message, get_beer_slogan(tz).replace("jesse", "uk"))
 
+    @hear("(^|[^a-zA-Z])cervesa(time)?($|[^a-zA-Z])")
+    @respond_to("cervesatime")
+    def reply_to_cvs_beertime(self, message):
+        """
+        beertime: I tell you how long it is until Jesse brings you beer.
+        """
+        tz = pytz.timezone('Europe/Amsterdam')
+        self.reply(message, get_beer_slogan(tz).replace("jesse", "spain"))
 
 
 def get_beer_slogan(tz=None):
