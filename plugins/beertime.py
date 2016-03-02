@@ -1,8 +1,10 @@
 import datetime
 import random
 
+import pytz
 from will.plugin import WillPlugin
 from will.decorators import respond_to, hear
+
 
 class BeerTimePlugin(WillPlugin):
     @hear("(^|[^a-zA-Z])beer(time)?($|[^a-zA-Z])")
@@ -15,7 +17,7 @@ class BeerTimePlugin(WillPlugin):
 
 
 def get_beer_slogan():
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(pytz.timezone('Europe/Amsterdam'))
     today = datetime.date.today()
     todaybeeroclock = now.replace(hour=17, minute=00, second=00)
     todayendbeeroclock = now.replace(hour=18, minute=00, second=00)
@@ -69,7 +71,8 @@ def get_beer_slogan():
         "Drink water...refresh, rehydrate, replenish...",
         "Alcohol is not the answer right now...",
         "You are not working right now...go back to work...",
-        "You need much less BEER than you think you need right now...0 to be honest...",
+        "You need much less BEER than you think you need right now..."
+        "0 to be honest...",
         "Don't rush anything...when the time is right it'll happen",
         "Stay focused, excited and passionate about what you do...",
         "There will be a time when everything will fall into place..."
