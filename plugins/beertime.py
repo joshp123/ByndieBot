@@ -1,6 +1,7 @@
 import datetime
 import random
 
+import pytz
 from will.plugin import WillPlugin
 from will.decorators import respond_to, hear
 
@@ -11,11 +12,31 @@ class BeerTimePlugin(WillPlugin):
         """
         beertime: I tell you how long it is until Jesse brings you beer.
         """
-        self.reply(message, get_beer_slogan())
+        tz = pytz.timezone('Europe/Amsterdam')
+        self.reply(message, get_beer_slogan(tz))
+
+    @hear("(^|[^a-zA-Z])bostonbeer(time)?($|[^a-zA-Z])")
+    @respond_to("bostonbeertime")
+    def reply_to_boston_beertime(self, message):
+        """
+        beertime: I tell you how long it is until Jesse brings you beer.
+        """
+        tz = pytz.timezone('America/New_York')
+        self.reply(message, get_beer_slogan(tz))
+
+    @hear("(^|[^a-zA-Z])londonbeer(time)?($|[^a-zA-Z])")
+    @respond_to("londonbeertime")
+    def reply_to_ldn_beertime(self, message):
+        """
+        beertime: I tell you how long it is until Jesse brings you beer.
+        """
+        tz = pytz.timezone('Europe/London')
+        self.reply(message, get_beer_slogan(tz))
 
 
-def get_beer_slogan():
-    now = datetime.datetime.now()
+
+def get_beer_slogan(tz=None):
+    now = datetime.datetime.now(tz)
     today = datetime.date.today()
     todaybeeroclock = now.replace(hour=17, minute=00, second=00)
     todayendbeeroclock = now.replace(hour=18, minute=00, second=00)
@@ -31,7 +52,7 @@ def get_beer_slogan():
             formatcountdown = todaybeeroclock - now
 
     beertimeslogans = [
-        "It's BEER time! Go on, you know you want one...",
+        "It's BEER time! Go on, you know you want one!",
         "I got 99 problems & BEERTIME solves all of 'em",
         "Trust me, you can dance...BEERTIME!",
         "A hard earned thirst needs a big cold beer",
@@ -49,7 +70,7 @@ def get_beer_slogan():
         "A beer a day keeps the doctor away. Have one!",
         "Shhh...Yep, I hear a BEER calling me",
         "Friends bring happiness into your life, best friends bring BEER!",
-        "It makes you see double...and feel single. Have one!",
+        "It makes you see double... and feel single. Have one!",
         "Beauty lies in the hands of the BEERHOLDER",
         "Wish you were BEER",
         "Life is brewtiful",
@@ -59,23 +80,23 @@ def get_beer_slogan():
     ]
 
     tooearlyslogans = [
-        "It's too early for BEER, you could have a problem...",
-        "Be smart...Be safe...Be sober...",
-        "Addiction is self-destruction...",
-        "And they all claim they can stop drinking any time they want to...",
-        "Come on man...",
-        "Less drinking, more thinking...",
-        "Alcohol is a parent to domestic violence...",
-        "Drink water...refresh, rehydrate, replenish...",
-        "Alcohol is not the answer right now...",
-        "You are not working right now...go back to work...",
-        "You need much less BEER than you think you need right now...0 to be honest...",
-        "Don't rush anything...when the time is right it'll happen",
-        "Stay focused, excited and passionate about what you do...",
-        "There will be a time when everything will fall into place..."
+        "It's too early for BEER, you could have a problem. ",
+        "Be smart. Be safe. Be sober. ",
+        "Addiction is self-destruction. ",
+        "And they all claim they can stop drinking any time they want to. ",
+        "Come on man. ",
+        "Less drinking, more thinking. ",
+        "Alcohol is a parent to domestic violence. ",
+        "Drink water. Refresh, rehydrate, replenish. ",
+        "Alcohol is not the answer right now. ",
+        "You are not working right now. go back to work. ",
+        "You need much less BEER than you think you need right now. 0 to be honest. ",
+        "Don't rush anything. when the time is right it'll happen",
+        "Stay focused, excited and passionate about what you do. ",
+        "There will be a time when everything will fall into place. "
     ]
 
-    weekendlogans = ["FFS... it's the WEEKEND, go home and relax!"]
+    weekendlogans = ["FFS, it's the WEEKEND, go home and relax!"]
 
     if weekday > 4:
         return "(jesse) {}".format(random.choice(weekendlogans))
